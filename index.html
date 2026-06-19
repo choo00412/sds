@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>큐넷 결과확인</title>
+    <title>큐넷 실기 결과확인</title>
     <style>
         * {
             box-sizing: border-box;
@@ -35,20 +35,12 @@
             letter-spacing: -1px;
         }
 
-        /* 상단 헤더 영역 스타일 */
+        /* 실기 상단 타이틀 영역 */
         .table-header-box {
             width: 100%;
             border-bottom: 1px solid #000000;
             padding-bottom: 8px;
             margin-bottom: 12px;
-        }
-
-        .notice {
-            font-size: 12.5px;
-            color: #444;
-            text-align: right;
-            margin-bottom: 10px;
-            white-space: nowrap;
         }
 
         .exam-title {
@@ -95,13 +87,9 @@
             border-right: none;
         }
 
-        /* 하단 결과 바 스타일 */
-        .result-bar td {
-            background-color: #e8eef7;
-            color: #000;
-            font-weight: bold;
+        /* 실기 하단 총점 행 스타일 */
+        .total-row td {
             border-bottom: none;
-            padding: 12px 5px;
         }
 
         .pass-text {
@@ -112,55 +100,35 @@
 <body>
 
 <div class="container">
-    <h2>결과확인</h2>
+    <h2>정처기 실기 점수</h2>
     
     <div class="table-header-box">
-    
-        <div class="exam-title">2026년 정기 기사 1회 (필기) - 정보처리기사</div>
+        <div class="exam-title">2026년 정기 기사 1회 (실기) - 정보처리기사</div>
     </div>
 
     <table class="main-table">
         <thead>
             <tr>
                 <th style="width: 15%;">수험번호</th>
-                <th style="width: 12%;">이름</th>
-                <th style="width: 20%;">종목(자격)</th>
-                <th style="width: 15%;">합격여부</th>
-                <th style="width: 26%;">과목</th>
-                <th style="width: 12%;">취득득점</th>
+                <th style="width: 15%;">이름</th>
+                <th style="width: 22%;">종목(자격)</th>
+                <th style="width: 16%;">구분</th>
+                <th style="width: 16%;">점수</th>
+                <th style="width: 16%;">합격여부</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td rowspan="5">10204036</td>
-                <td rowspan="5">추승연</td>
-                <td rowspan="5">정보처리기사</td>
-                <td rowspan="5" class="pass-text">불합격</td>
-                <td>소프트웨어설계</td>
-                <td>70</td>
-            </tr>
-            <tr>
-                <td>소프트웨어개발</td>
-                <td>65</td>
-            </tr>
-            <tr>
-                <td>데이터베이스구축</td>
+                <td rowspan="2">10204036</td>
+                <td rowspan="2">추승연</td>
+                <td rowspan="2">정보처리기사</td>
+                <td>필답형</td>
                 <td>55</td>
+                <td rowspan="2" class="pass-text">불합격</td>
             </tr>
-            <tr>
-                <td>프로그래밍언어활용</td>
-                <td>55</td>
-            </tr>
-            <tr>
-                <td>정보시스템구축관리</td>
-                <td>45</td>
-            </tr>
-            
-            <tr class="result-bar">
-                <td>평균</td>
-                <td colspan="2">58</td>
-                <td>총점</td>
-                <td colspan="2">290</td>
+            <tr class="total-row">
+                <td style="font-weight: bold;">총점</td>
+                <td style="font-weight: bold;">55</td>
             </tr>
         </tbody>
     </table>
