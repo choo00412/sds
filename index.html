@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>큐넷 결과확인</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 960px;
+            background-color: #ffffff;
+            padding: 20px;
+            border: 1px solid #dcdcdc;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 20px;
+        }
+
+        .notice {
+            font-size: 12px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .exam-title {
+            font-size: 13px;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #e6ecf5;
+            color: #000;
+            font-weight: bold;
+            padding: 12px 5px;
+            border-top: 2px solid #555;
+            border-bottom: 1px solid #ccc;
+        }
+
+        td {
+            padding: 15px 5px;
+            border-bottom: 1px solid #e1e1e1;
+            color: #333;
+            vertical-align: middle;
+        }
+
+        /* 세부 과목 테이블 스타일 */
+        .sub-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .sub-table td {
+            border: none;
+            border-bottom: 1px solid #e1e1e1;
+            padding: 10px 5px;
+        }
+        .sub-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .sub-table tr td:first-child {
+            border-right: 1px solid #e1e1e1;
+            width: 70%;
+        }
+
+        /* 배경색이 들어가는 하단 결과 바 */
+        .result-bar {
+            background-color: #e6ecf5;
+            font-weight: bold;
+        }
+        .result-bar td {
+            border-bottom: 2px solid #c5d3e8;
+            padding: 12px 5px;
+        }
+
+        /* 텍스트 정렬 및 스타일 */
+        .pass-text {
+            color: #000;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>결과확인</h2>
+    
+    <div class="notice">수험번호, 이름, 종목(자격), 합격여부, 과목, 득점 항목 순으로 결과확인</div>
+    <div class="exam-title">2026년 정기 기사 1회 (필기) - 정보처리기사</div>
+
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 18%;">수험번호</th>
+                <th style="width: 18%;">이름</th>
+                <th style="width: 22%;">종목(자격)</th>
+                <th style="width: 18%;">합격여부</th>
+                <th style="width: 24%; padding: 0;" colspan="2">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <tr>
+                            <td style="border: none; width: 70%; font-weight: bold; padding: 0;">과목</td>
+                            <td style="border: none; font-weight: bold; padding: 0;">취득득점</td>
+                        </tr>
+                    </table>
+                </th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <tr>
+                <td>10204036</td>
+                <td>추승연</td>
+                <td>정보처리기사</td>
+                <td class="pass-text">합격</td>
+                <td style="padding: 0;" colspan="2">
+                    <table class="sub-table">
+                        <tr>
+                            <td>소프트웨어설계</td>
+                            <td>80</td>
+                        </tr>
+                        <tr>
+                            <td>소프트웨어개발</td>
+                            <td>75</td>
+                        </tr>
+                        <tr>
+                            <td>데이터베이스구축</td>
+                            <td>75</td>
+                        </tr>
+                        <tr>
+                            <td>프로그래밍언어활용</td>
+                            <td>80</td>
+                        </tr>
+                        <tr>
+                            <td>정보시스템구축관리</td>
+                            <td>85</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr class="result-bar">
+                <td>평균</td>
+                <td>79</td>
+                <td>총점</td>
+                <td colspan="3" style="text-align: right; padding-right: 70px;">395</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
