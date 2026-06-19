@@ -48,62 +48,81 @@
             margin-bottom: 10px;
         }
 
-        table {
+        /* 메인 테이블 스타일 */
+        .main-table {
             width: 100%;
             border-collapse: collapse;
             font-size: 13px;
             text-align: center;
+            border-top: 2px solid #555;
+            border-bottom: 2px solid #555;
         }
 
-        th {
+        /* 공통 헤더 스타일 */
+        .main-table th {
             background-color: #e6ecf5;
             color: #000;
             font-weight: bold;
             padding: 12px 5px;
-            border-top: 2px solid #555;
             border-bottom: 1px solid #ccc;
+            border-right: 1px solid #ccc;
         }
 
-        td {
-            padding: 15px 5px;
+        /* 공통 데이터 칸 스타일 */
+        .main-table td {
+            padding: 12px 5px;
             border-bottom: 1px solid #e1e1e1;
+            border-right: 1px solid #e1e1e1;
             color: #333;
             vertical-align: middle;
         }
 
-        /* 세부 과목 테이블 스타일 */
+        /* 테이블 가장 오른쪽 테두리 제거 */
+        .main-table th:last-child,
+        .main-table td:last-child {
+            border-right: none;
+        }
+
+        /* 과목 세부 테이블 스타일 */
         .sub-table {
             width: 100%;
             border-collapse: collapse;
+            margin: -12px -5px; /* 부모 td의 패딩을 상쇄하여 꽉 차게 만듦 */
         }
+
         .sub-table td {
-            border: none;
             border-bottom: 1px solid #e1e1e1;
-            padding: 10px 5px;
+            border-right: none;
+            padding: 12px 5px;
         }
+
+        /* 과목과 점수 사이의 내부 세로선 */
+        .sub-table td:first-child {
+            border-right: 1px solid #e1e1e1;
+            width: 70%;
+            text-align: center;
+        }
+
+        /* 과목 테이블의 마지막 행은 하단 테두리 제외 */
         .sub-table tr:last-child td {
             border-bottom: none;
         }
 
-        .sub-table tr td:first-child {
-            border-right: 1px solid #e1e1e1;
-            width: 70%;
-        }
-
-        /* 배경색이 들어가는 하단 결과 바 */
+        /* 하단 결과 바 스타일 */
         .result-bar {
-            background-color: #e6ecf5;
+            background-color: #f7fafc;
             font-weight: bold;
         }
+        
         .result-bar td {
-            border-bottom: 2px solid #c5d3e8;
-            padding: 12px 5px;
+            background-color: #e6ecf5;
+            color: #000;
+            font-weight: bold;
+            border-bottom: none;
         }
 
-        /* 텍스트 정렬 및 스타일 */
         .pass-text {
             color: #000;
-            font-weight: normal;
         }
     </style>
 </head>
@@ -115,60 +134,48 @@
     <div class="notice">수험번호, 이름, 종목(자격), 합격여부, 과목, 득점 항목 순으로 결과확인</div>
     <div class="exam-title">2026년 정기 기사 1회 (필기) - 정보처리기사</div>
 
-    <table>
+    <table class="main-table">
         <thead>
             <tr>
-                <th style="width: 18%;">수험번호</th>
-                <th style="width: 18%;">이름</th>
-                <th style="width: 22%;">종목(자격)</th>
-                <th style="width: 18%;">합격여부</th>
-                <th style="width: 24%; padding: 0;" colspan="2">
-                    <table style="width: 100%; border-collapse: collapse;">
-                        <tr>
-                            <td style="border: none; width: 70%; font-weight: bold; padding: 0;">과목</td>
-                            <td style="border: none; font-weight: bold; padding: 0;">취득득점</td>
-                        </tr>
-                    </table>
-                </th>
+                <th style="width: 15%;">수험번호</th>
+                <th style="width: 12%;">이름</th>
+                <th style="width: 20%;">종목(자격)</th>
+                <th style="width: 15%;">합격여부</th>
+                <th style="width: 26%;">과목</th>
+                <th style="width: 12%;">취득득점</th>
             </tr>
         </thead>
-        
         <tbody>
             <tr>
-                <td>10204036</td>
-                <td>추승연</td>
-                <td>정보처리기사</td>
-                <td class="pass-text">합격</td>
-                <td style="padding: 0;" colspan="2">
-                    <table class="sub-table">
-                        <tr>
-                            <td>소프트웨어설계</td>
-                            <td>80</td>
-                        </tr>
-                        <tr>
-                            <td>소프트웨어개발</td>
-                            <td>75</td>
-                        </tr>
-                        <tr>
-                            <td>데이터베이스구축</td>
-                            <td>75</td>
-                        </tr>
-                        <tr>
-                            <td>프로그래밍언어활용</td>
-                            <td>80</td>
-                        </tr>
-                        <tr>
-                            <td>정보시스템구축관리</td>
-                            <td>85</td>
-                        </tr>
-                    </table>
-                </td>
+                <td rowspan="5">10204036</td>
+                <td rowspan="5">추승연</td>
+                <td rowspan="5">정보처리기사</td>
+                <td rowspan="5" class="pass-text">합격</td>
+                <td>소프트웨어설계</td>
+                <td>80</td>
             </tr>
+            <tr>
+                <td>소프트웨어개발</td>
+                <td>75</td>
+            </tr>
+            <tr>
+                <td>데이터베이스구축</td>
+                <td>75</td>
+            </tr>
+            <tr>
+                <td>프로그래밍언어활용</td>
+                <td>80</td>
+            </tr>
+            <tr>
+                <td>정보시스템구축관리</td>
+                <td>85</td>
+            </tr>
+            
             <tr class="result-bar">
                 <td>평균</td>
                 <td>79</td>
                 <td>총점</td>
-                <td colspan="3" style="text-align: right; padding-right: 70px;">395</td>
+                <td colspan="3" style="text-align: right; padding-right: 50px;">395</td>
             </tr>
         </tbody>
     </table>
