@@ -35,10 +35,10 @@
             letter-spacing: -1px;
         }
 
-        /* 💡 한 줄 정렬을 위한 상단 헤더 영역 스타일 */
+        /* 상단 헤더 영역 스타일 */
         .table-header-box {
             width: 100%;
-            border-bottom: 1px solid #000000; /* 표 바로 위의 구분선 */
+            border-bottom: 1px solid #000000;
             padding-bottom: 8px;
             margin-bottom: 12px;
         }
@@ -46,17 +46,17 @@
         .notice {
             font-size: 12.5px;
             color: #444;
-            text-align: right; /* 원본처럼 우측 정렬 */
+            text-align: right;
             margin-bottom: 10px;
-            white-space: nowrap; /* 텍스트가 절대 부러지지 않고 한 줄로 나오게 설정 */
+            white-space: nowrap;
         }
 
         .exam-title {
             font-size: 13.5px;
             font-weight: bold;
             color: #000;
-            text-align: left; /* 원본처럼 좌측 정렬 */
-            white-space: nowrap; /* 한 줄로 쭉 뻗어나가도록 설정 */
+            text-align: left;
+            white-space: nowrap;
         }
 
         /* 메인 테이블 스타일 */
@@ -65,7 +65,7 @@
             border-collapse: collapse;
             font-size: 13px;
             text-align: center;
-            border-top: 1px solid #000000; /* 상단선 두께 조정 */
+            border-top: 1px solid #000000;
             border-bottom: 1px solid #b5b5b5;
         }
 
@@ -95,7 +95,7 @@
             border-right: none;
         }
 
-        /* 하단 결과 바 스타일 */
+        /* 💡 하단 결과 바 스타일 - 각 칸이 위쪽 세로선과 정확히 일치하도록 분리 및 배경 처리 */
         .result-bar td {
             background-color: #e8eef7;
             color: #000;
@@ -115,6 +115,7 @@
     <h2>결과확인</h2>
     
     <div class="table-header-box">
+        <div class="notice">수험번호, 이름, 종목(자격), 합격여부, 과목, 득점 항목 순으로 결과확인</div>
         <div class="exam-title">2026년 정기 기사 1회 (필기) - 정보처리기사</div>
     </div>
 
